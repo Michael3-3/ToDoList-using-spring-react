@@ -65,10 +65,37 @@ export default function Landing({isAuthenticated, setIsAuthenticated}) {
   }, [isAuthenticated, numberAllTodo, numberAllTodoNotCompleted])
 
 	return (
-		<div className="text-center">
-			<h1>Todo List Application</h1>
-      {showErrorMessage()}
-			{message}
-		</div>
+		<div
+  style={{
+    minHeight: '90vh',
+    background: 'linear-gradient(to bottom right, #0f2027, #203a43, #2c5364)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    color: '#fff',
+  }}
+>
+  <div
+    style={{
+      textAlign: 'center',
+      background: 'rgba(255, 255, 255, 0.1)',
+      padding: '2rem',
+      borderRadius: '16px',
+      backdropFilter: 'blur(12px)',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+      width: '90%',
+      maxWidth: '600px',
+    }}
+  >
+    <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
+      📝 ToDo List Application
+    </h1>
+    <div style={{ marginBottom: '1rem' }}>{showErrorMessage()}</div>
+    <div>{message}</div>
+  </div>
+</div>
+
 	)
 }

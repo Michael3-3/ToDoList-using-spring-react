@@ -10,3 +10,10 @@ a:hover {
    color: rgb(159, 159, 255);
    text-decoration: none;
 }
+.nav-link {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+}

@@ -26,7 +26,16 @@ function App () {
 
   return (
     <Router>
-    <div className="App">
+    <div
+  className="App"
+  style={{
+   backgroundImage: "url('/myimage.jpg')" ,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    minHeight: '100vh'
+  }}
+>
       <Header isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
       <div>
         <Switch>

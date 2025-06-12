@@ -63,34 +63,101 @@ function AddTodo({isAuthenticated, setIsAuthenticated}) {
     </div>
   }
 
-	return (
-		<div className="container">
-      <form onSubmit={onSubmit}>
-        <h1>Add New Todo</h1>
-        <div className="form-group">
-          <label>Title</label>
-          <input 
-            value={title} 
-            onChange={e => setTitle(e.target.value)} 
-            placeholder="Title"
-            className="form-control">
-          </input>
-        </div>
-        <div className="form-group">
-          <label>Target Date</label>
-          <input 
-            value={targetDate} 
-            type="date" 
-            onChange={e => setTargetDate(e.target.value)} 
-            className="form-control">
-          </input>
-        </div>
-        <button className="btn btn-primary">Add Todo</button>
-      </form>
-      {showMessage()}
-      {showErrorMessage()}
-    </div>
-	)
+	
+		return (
+  <div
+    style={{
+      background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
+      minHeight: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      padding: '1rem',
+    }}
+  >
+    <form
+      onSubmit={onSubmit}
+      style={{
+        width: '100%',
+        maxWidth: '450px',
+        padding: '2rem',
+        borderRadius: '16px',
+        background: 'rgba(255, 255, 255, 0.1)',
+        backdropFilter: 'blur(12px)',
+        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        color: '#fff',
+      }}
+    >
+      <h1 style={{ textAlign: 'center', marginBottom: '1.5rem', fontWeight: 800 }}>
+        Add New Todo
+      </h1>
+
+      <div style={{ marginBottom: '1rem' }}>
+        <label style={{ display: 'block', marginBottom: '0.5rem' }}>Title</label>
+        <input
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="Title"
+          style={{
+            width: '100%',
+            padding: '0.75rem',
+            borderRadius: '8px',
+            border: 'none',
+            backgroundColor: 'rgba(255,255,255,0.2)',
+            color: '#fff',
+            outline: 'none',
+          }}
+        />
+      </div>
+
+      <div style={{ marginBottom: '1.5rem' }}>
+        <label style={{ display: 'block', marginBottom: '0.5rem' }}>Target Date</label>
+        <input
+          type="date"
+          value={targetDate}
+          onChange={e => setTargetDate(e.target.value)}
+          style={{
+            width: '100%',
+            padding: '0.75rem',
+            borderRadius: '8px',
+            border: 'none',
+            backgroundColor: 'rgba(255,255,255,0.2)',
+            color: '#fff',
+            outline: 'none',
+          }}
+        />
+      </div>
+
+      <button
+        type="submit"
+        style={{
+          width: '100%',
+          padding: '0.75rem',
+          backgroundColor: '#FF5722',
+          border: 'none',
+          borderRadius: '8px',
+          fontWeight: '600',
+          color: '#fff',
+          cursor: 'pointer',
+          transition: 'transform 0.2s',
+        }}
+        onMouseOver={e => (e.target.style.transform = 'scale(1.03)')}
+        onMouseOut={e => (e.target.style.transform = 'scale(1)')}
+      >
+        Add Todo
+      </button>
+
+      <div style={{ marginTop: '1rem' }}>
+        {showMessage()}
+        {showErrorMessage()}
+      </div>
+    </form>
+  </div>
+);
+
+	
 }
 
 export default AddTodo;
